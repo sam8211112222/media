@@ -3,9 +3,11 @@ import {createSlice} from "@reduxjs/toolkit";
 const usersSlices =createSlice({
     name:'users',
     initialState:{
-        data:[]
+        data:[],
+        isLoading:false,
+        error:null,
     },
     reducers:{}
 })
 
-export const userRedicer = usersSlices.reducer
+export const userReducer = usersSlices.reducer
