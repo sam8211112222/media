@@ -5,7 +5,7 @@ import Button from './Button';
 import Skeleton from './Skeleton';
 import { useThunk } from '../hooks/use-thunk';
 import UsersListItem from './UsersListItem';
-import {addUser} from "../store/thunks/addUser";
+import {addUser} from "../store";
 
 function UsersList() {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] =
