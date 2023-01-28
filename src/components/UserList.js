@@ -3,32 +3,31 @@ import {useEffect} from "react";
 import {fetchUsers} from "../store";
 import Button from "./Button";
 import {addUser} from "../store/thunks/addUser";
+import {useThunk} from "../hooks/use-thunk";
+import Skeleton from "./Skeleton";
 
 const UserList = () => {
-    const dispatch = useDispatch()
-
-    const {isLoading, data, error} = useSelector((state) => {
-        return state.users
-    })
+    const [doFetchUsers, isLoadingUsers, loadingUsersError] =
+        useThunk(fetchUsers);
+    const [doCreateUser, isCreatingUser, creatingUserError] = useThunk(addUser);
+    const { data } = useSelector((state) => {
+        return state.users;
+    });
 
     useEffect(() => {
-        dispatch(fetchUsers())
-    }, [dispatch])
+        doFetchUsers();
+    }, [doFetchUsers]);
 
     const handleUserAdd = () => {
-        dispatch(addUser());
+        doCreateUser();
     };
 
-    if (isLoading) {
-        return <div>
-            Loading...
-        </div>
+    if (isLoadingUsers) {
+        return <Skeleton times={6} className="h-10 w-full" />;
     }
 
-    if (error) {
-        return <div>
-            Error...
-        </div>
+    if (loadingUsersError) {
+        return <div>Error fetching data...</div>;
     }
     const renderedUsers = data.map((user) => {
         return <div key={user.id}>
@@ -39,11 +38,16 @@ const UserList = () => {
         <div>
             <div className="flex flex-row justify-between m-3">
                 <h1 className="m-2 text-xl">Users</h1>
-                <Button onClick={handleUserAdd}>+ Add User</Button>
+                {isCreatingUser ? (
+                    'Creating User...'
+                ) : (
+                    <Button onClick={handleUserAdd}>+ Add User</Button>
+                )}
+                {creatingUserError && 'Error creating user...'}
             </div>
             {renderedUsers}
         </div>
-    )
+    );
 }
 
 export default UserList
