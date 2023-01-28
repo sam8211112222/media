@@ -1,5 +1,98 @@
 {
-  "users": [{"id":1,"name":"mara"}],
+  "users": [
+    {
+      "id": 1,
+      "name": "mara"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "name": "Thelma Romaguera",
+      "id": 10
+    },
+    {
+      "name": "Lynne Langosh",
+      "id": 11
+    },
+    {
+      "name": "Mathew Howe",
+      "id": 12
+    },
+    {
+      "name": "Willie Skiles",
+      "id": 13
+    },
+    {
+      "name": "Patsy Berge",
+      "id": 14
+    },
+    {
+      "name": "Hazel DuBuque",
+      "id": 15
+    },
+    {
+      "name": "Dixie Bode",
+      "id": 16
+    },
+    {
+      "name": "Wallace Zemlak",
+      "id": 17
+    },
+    {
+      "name": "Andrea Miller PhD",
+      "id": 18
+    },
+    {
+      "name": "Miss Olive Heidenreich",
+      "id": 19
+    },
+    {
+      "name": "Joe Olson",
+      "id": 20
+    },
+    {
+      "name": "Joanna Bradtke",
+      "id": 21
+    },
+    {
+      "name": "Eduardo Hilpert",
+      "id": 22
+    },
+    {
+      "name": "Guadalupe Sipes I",
+      "id": 23
+    },
+    {
+      "name": "Geraldine Kerluke",
+      "id": 24
+    },
+    {
+      "name": "Stephen Morar",
+      "id": 25
+    }
+  ],
   "albums": [],
   "photos": []
 }
